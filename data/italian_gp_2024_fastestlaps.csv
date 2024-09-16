@@ -1,0 +1,21 @@
+﻿Pos,No,Driver,Car,Lap,time_of_day,time,avg_speed
+1,4, Norris,McLaren Mercedes,53,16:18:21,01:21.4,256.1
+2,44, Hamilton,Mercedes,53,16:18:37,01:21.5,255.849
+3,1, Verstappen,Red Bull Racing Honda RBPT,43,16:05:04,01:21.7,255.12
+4,81, Piastri,McLaren Mercedes,53,16:18:17,01:21.9,254.503
+5,63, Russell,Mercedes,49,16:13:25,01:22.0,254.215
+6,18, Stroll,Aston Martin Aramco Mercedes,52,16:18:58,01:22.2,253.609
+7,14, Alonso,Aston Martin Aramco Mercedes,46,16:09:39,01:22.9,251.432
+8,11, Perez,Red Bull Racing Honda RBPT,47,16:10:46,01:23.0,251.35
+9,55, Sainz,Ferrari,53,16:18:30,01:23.2,250.601
+10,16, Leclerc,Ferrari,33,15:50:23,01:23.2,250.58
+11,27, Hulkenberg,Haas Ferrari,44,16:07:30,01:23.3,250.432
+12,20, Magnussen,Haas Ferrari,51,16:16:25,01:23.4,249.946
+13,77, Bottas,Kick Sauber Ferrari,52,16:18:42,01:23.6,249.432
+14,43, Colapinto,Williams Mercedes,53,16:19:36,01:23.7,249.077
+15,10, Gasly,Alpine Renault,51,16:17:09,01:23.8,248.997
+16,23, Albon,Williams Mercedes,53,16:19:22,01:23.9,248.514
+17,3, Ricciardo,RB Honda RBPT,52,16:18:09,01:24.2,247.625
+18,31, Ocon,Alpine Renault,52,16:18:27,01:24.3,247.261
+19,24,Zhou ,Kick Sauber Ferrari,17,15:28:46,01:25.1,245.085
+20,22, Tsunoda,RB Honda RBPT,4,15:09:30,01:26.2,241.94
