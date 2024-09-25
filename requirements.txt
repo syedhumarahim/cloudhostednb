@@ -3,7 +3,7 @@ pylint
 plotly
 reportlab 
 kaleido
-numpy==1.26.4
+numpy
 matplotlib
 pytest
 black
