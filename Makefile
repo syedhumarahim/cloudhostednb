@@ -1,16 +1,17 @@
 install:
 	pip install --upgrade pip && pip install -r requirements.txt
 
+format:	
+	black *.py 
+
 run:
-	python3 main.py
+	python main.py
 
 lint:
 	pylint --disable=R,C main.py
 
 test:
-	python3 test_main.py 
+	python -m pytest -vv --cov=. test_main.py --disable-warnings
 
-cp C:/Users/ss1516/Downloads/Bob_PythonTemplate1-main/Bob_PythonTemplate1-main/.devcontainer .
-
-all: install run test lint
+all: install format run test lint
 

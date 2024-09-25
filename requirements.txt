@@ -1,2 +1,13 @@
 pandas 
 pylint
+plotly
+reportlab 
+kaleido
+numpy==1.26.4
+matplotlib
+pytest
+black
+pytest-cov
+sweetviz
+pillow
+warnings
