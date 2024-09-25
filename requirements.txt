@@ -1,4 +1,4 @@
-pandas 
+pandas==3.11.10
 pylint
 plotly
 reportlab 
