@@ -1,4 +1,4 @@
-[![Python 3.11.9](https://github.com/syedhumarahim/scaffold/actions/workflows/main.yml/badge.svg)](https://github.com/syedhumarahim/scaffold/actions/workflows/main.yml)
+[![Python 3.11](https://github.com/nogibjj/DE_assignt2_huma/actions/workflows/main.yml/badge.svg)](https://github.com/nogibjj/DE_assignt2_huma/actions/workflows/main.yml)
 
 # Pandas Descriptive Statistics Script
 This is the second Assignment for Data Engineering on Pandas descriptive statistics.
@@ -151,4 +151,4 @@ This project highlights the importance of data-driven insights in understanding 
 
 ### CI/CD Pipeline
 
-
+[![Full Report of Heart Attack Risk Data](pandas_recoding-ezgif.com-video-to-gif-converter.gif)]
