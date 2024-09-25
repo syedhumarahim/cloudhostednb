@@ -9,4 +9,3 @@ pytest
 black
 pytest-cov
 sweetviz
-warnings
