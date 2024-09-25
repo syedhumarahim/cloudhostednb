@@ -9,5 +9,4 @@ pytest
 black
 pytest-cov
 sweetviz
-pillow
 warnings
