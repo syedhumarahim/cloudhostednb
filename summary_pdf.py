@@ -11,9 +11,6 @@ from reportlab.platypus import (
 )
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
-from reportlab.platypus import ListFlowable, ListItem
-from reportlab.lib.units import inch
-import pandas as pd
 import os
 
 
@@ -180,7 +177,7 @@ def create_pdf_report(
     elements.append(summary_heading)
     elements.append(Spacer(1, 12))
 
-    table_data = [df.columns.tolist()] + df.reset_index(drop=True).values.tolist()
+    table_data = [df.columns] + [list(row) for row in df.rows()]
 
     # function to determine the width of the columns based on content
     def get_col_widths(data):

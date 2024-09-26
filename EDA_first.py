@@ -1,8 +1,8 @@
 import plotly.express as px
 import plotly.graph_objects as go
-import numpy as np
 import pandas as pd
-import plotly.io as pio
+import polars as pl
+from polars.selectors import numeric
 import os
 
 
@@ -10,15 +10,15 @@ def generate_and_save_plots(df, save_dir="output/plots"):
 
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
+    data = df.clone()
+    
 
-    data = df.copy()
 
     # Group the data by Hemisphere and Heart Attack Risk
     hemisphere_risk_grouped = (
-        data.groupby(["Hemisphere", "Heart Attack Risk"])
-        .size()
-        .reset_index(name="Count")
-    )
+    data.group_by(["Hemisphere", "Heart Attack Risk"])
+    .agg(pl.len().alias("Count")))
+        
     fig_hemisphere_stacked = px.bar(
         hemisphere_risk_grouped,
         x="Hemisphere",
@@ -36,11 +36,10 @@ def generate_and_save_plots(df, save_dir="output/plots"):
     # fig_hemisphere_stacked.show()
 
     # Group by Continent and Heart Attack Risk
+        
     continent_risk_grouped = (
-        data.groupby(["Continent", "Heart Attack Risk"])
-        .size()
-        .reset_index(name="Count")
-    )
+        data.group_by(["Continent", "Heart Attack Risk"]).agg(pl.len().alias("Count")))
+
     fig_continent_stacked = px.bar(
         continent_risk_grouped,
         x="Continent",
@@ -58,9 +57,10 @@ def generate_and_save_plots(df, save_dir="output/plots"):
     # fig_continent_stacked.show()
 
     # Group by Country and Heart Attack Risk
+
     country_risk_grouped = (
-        data.groupby(["Country", "Heart Attack Risk"]).size().reset_index(name="Count")
-    )
+        data.group_by(["Country", "Heart Attack Risk"]).agg(pl.len().alias("Count")))
+    
     fig_stacked_bar = px.bar(
         country_risk_grouped,
         x="Country",
@@ -78,10 +78,11 @@ def generate_and_save_plots(df, save_dir="output/plots"):
     # fig_stacked_bar.show()
 
     # Heart Attack Risk by Smoking Status and Gender
-    heart_risk_data = data[data["Heart Attack Risk"] == 1]
+    heart_risk_data = data.filter(pl.col("Heart Attack Risk") == 1)
+
     smoking_gender_group = (
-        heart_risk_data.groupby(["Sex", "Smoking"]).size().reset_index(name="Count")
-    )
+        heart_risk_data.group_by(["Sex", "Smoking"]).agg(pl.len().alias("Count")))
+
     fig_smoking_gender_grouped = px.bar(
         smoking_gender_group,
         x="Sex",
@@ -101,7 +102,7 @@ def generate_and_save_plots(df, save_dir="output/plots"):
     # fig_smoking_gender_grouped.show()
 
     # Pie Chart for Average Heart Attack Risk by Gender
-    gender_risk = data.groupby("Sex")["Heart Attack Risk"].mean().reset_index()
+    gender_risk = data.group_by(["Sex","Heart Attack Risk"]).agg(pl.len().alias("Count"))
     fig_pie = px.pie(
         gender_risk,
         values="Heart Attack Risk",
@@ -152,19 +153,49 @@ def generate_and_save_plots(df, save_dir="output/plots"):
     # fig_age_dist.show()
 
     # Systolic and Diastolic Blood Pressure by Age Group and Heart Attack Risk
-    bp_split = data["Blood Pressure"].str.split("/", expand=True)
-    bp_split.columns = ["Systolic_BP", "Diastolic_BP"]
-    data["Systolic_BP"] = pd.to_numeric(bp_split["Systolic_BP"], errors="coerce")
-    data["Diastolic_BP"] = pd.to_numeric(bp_split["Diastolic_BP"], errors="coerce")
-    data["Age Group"] = pd.cut(
-        data["Age"], bins=[0, 30, 45, 60, 100], labels=["<30", "30-45", "45-60", "60+"]
-    )
+    # bp_split = data["Blood Pressure"].str.split("/", expand=True)
+    # bp_split.columns = ["Systolic_BP", "Diastolic_BP"]
+    # data["Systolic_BP"] = pd.to_numeric(bp_split["Systolic_BP"], errors="coerce")
+    # data["Diastolic_BP"] = pd.to_numeric(bp_split["Diastolic_BP"], errors="coerce")
+    # data["Age Group"] = pd.cut(
+    #     data["Age"], bins=[0, 30, 45, 60, 100], labels=["<30", "30-45", "45-60", "60+"]
+    # )
 
-    bp_grouped = (
-        data.groupby(["Age Group", "Heart Attack Risk"])
-        .agg({"Systolic_BP": "mean", "Diastolic_BP": "mean"})
-        .reset_index()
-    )
+    # bp_grouped = (
+    #     data.group_by(["Age Group", "Heart Attack Risk"])
+    #     .agg({"Systolic_BP": "mean", "Diastolic_BP": "mean"})
+    #     .reset_index()
+    # )
+
+    data = data.with_columns([
+        pl.col('Blood Pressure')
+        .str.split_exact('/', 1)
+        .struct.field('field_0')
+        .cast(pl.Float64)
+        .alias('Systolic_BP'),
+        
+        pl.col('Blood Pressure')
+        .str.split_exact('/', 1)
+        .struct.field('field_1')
+        .cast(pl.Float64)
+        .alias('Diastolic_BP')
+    ])
+
+    # Step 2: Create 'Age Group' column
+    data = data.with_columns([
+            pl.when(pl.col('Age') < 30).then(pl.lit('<30'))
+            .when(pl.col('Age') < 45).then(pl.lit('30-45'))
+            .when(pl.col('Age') < 60).then(pl.lit('45-60'))
+            .otherwise(pl.lit('60+'))
+            .alias('Age Group')
+        ])
+
+    # Step 3: Group by 'Age Group' and 'Heart Attack Risk' and compute means
+    bp_grouped = data.group_by(['Age Group', 'Heart Attack Risk']).agg([
+        pl.col('Systolic_BP').mean().alias('Systolic_BP'),
+        pl.col('Diastolic_BP').mean().alias('Diastolic_BP')
+    ])
+
 
     # Systolic Blood Pressure
     fig_systolic_stacked = px.bar(
@@ -201,9 +232,9 @@ def generate_and_save_plots(df, save_dir="output/plots"):
     # fig_diastolic_stacked.show()
 
 
-def create_summary_table(df):
+def create_summary_table_pandas(df):
     """
-    Create a detailed summary table with additional statistical metrics.
+    Create a detailed summary table with additional statistical metrics using pandas.
     """
     df = df.select_dtypes(include=["float64", "int64", "float32", "int32"])
     summary = df.describe(include="all").transpose()
@@ -226,4 +257,62 @@ def create_summary_table(df):
     summary.reset_index(names="Columns", inplace=True)
     summary.Columns = summary.Columns.str.replace(" Per ", "/")
     summary.Columns = summary.Columns.str.replace("Physical Activity", "Excercise-")
+    return summary
+
+
+
+def create_summary_table_polars(df):
+    """
+    Create a detailed summary table with additional statistical metrics using Polars.
+    """
+    # Select numeric columns
+    numeric_cols = df.select(numeric()).columns
+
+    
+    summary_data = []
+
+    # Iterate over each numeric column to compute statistics
+    for col in numeric_cols:
+        s = df[col]
+
+        
+        col_data = {
+            'Columns': col,
+            'count': s.drop_nulls().count(),
+            'mean': s.mean(),
+            'std': s.std(),
+            'min': s.min(),
+            '25%': s.quantile(0.25),
+            '50%': s.median(),
+            '75%': s.quantile(0.75),
+            'max': s.max(),
+            'skew': s.skew(),
+            'kurtosis': s.kurtosis(),
+            'missing': s.null_count(),
+            'unique': s.n_unique()
+        }
+
+     
+        summary_data.append(col_data)
+
+    
+    summary = pl.DataFrame(summary_data)
+
+    # Convert specific columns to integers (excluding 'skew' and 'kurtosis')
+    cols_to_int = [col for col in summary.columns if col not in ['Columns', 'skew', 'kurtosis']]
+    summary = summary.with_columns([pl.col(col).cast(pl.Int64) for col in cols_to_int])
+    summary= summary.with_columns(
+    pl.col("skew").round(2)
+)
+    summary= summary.with_columns(
+    pl.col("kurtosis").round(2)
+)
+
+    # Replace strings in the 'Columns' column
+    summary = summary.with_columns(
+        pl.col('Columns')
+        .str.replace(' Per ', '/')
+        .str.replace('Physical Activity', 'Exercise-')
+    )
+
     return summary
