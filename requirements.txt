@@ -1,5 +1,4 @@
 pandas
-polars
 pylint
 plotly
 reportlab 
@@ -10,4 +9,3 @@ pytest
 black
 pytest-cov
 sweetviz
-ydata-profiling

@@ -1,20 +1,11 @@
 [![Python 3.11](https://github.com/nogibjj/DE_assignt2_huma/actions/workflows/main.yml/badge.svg)](https://github.com/nogibjj/DE_assignt2_huma/actions/workflows/main.yml)
 
-# Polars Descriptive Statistics Script
-This is the second Assignment for Data Engineering on Polars descriptive statistics.
+# Pandas Descriptive Statistics Script
+This is the second Assignment for Data Engineering on Pandas descriptive statistics.
 
 # Heart Attack Risk Analysis 
-
 ## Project Aim
-
 The aim of this project is to analyze the risk of heart attacks across different demographics and various lifestyle and health factors using data visualization techniques and statistical analysis. This analysis seeks to uncover patterns and trends that can help in predicting heart attack risks.
-In this project, I have used Polars to create summary statistics and to manipulate data to draw insights and create visualizations. Additionally, I compared the performance of Pandas and Polars in generating summary tables. The results are as follows:
-
-![Polars vs Pandas Execution](save.png)
-
-All of this information is then used to generate an overall PDF report.
-
-Note: Only the HTML report uses a Pandas DataFrame (sweetviz library doesn't support a Polars DataFrame); the rest of the functions use Polars DataFrame.
 
 ## Project Structure
 The project directory is organized as follows:
@@ -63,8 +54,8 @@ Install dependencies:
 `make install` or `pip install -r requirements.txt`
 
 ## Functions Description
-- generate_and_save_plots(df, save_dir): Generates and saves various plots to visualize the heart attack risk data using polars df
-- create_summary_table_polars(df): Creates a table of summary statistics for the given polars DataFrame.
+- generate_and_save_plots(df, save_dir): Generates and saves various plots to visualize the heart attack risk data.
+- create_summary_table(df): Creates a table of summary statistics for the given DataFrame.
 - create_pdf_report(df, image_dir, output_pdf): Generates a comprehensive PDF report with all the plots and summaries.
 
 ## Data
@@ -132,7 +123,7 @@ ize specific aspects of the data, helping visualize trends and distributions tha
 ### How to View Output
 
 - HTML Report: Open output/Report.html in a web browser to view the interactive exploratory analysis report.
-- Summary Table: View output/summary_table.csv using any CSV reader or within a Python environment using polars.
+- Summary Table: View output/summary_table.csv using any CSV reader or within a Python environment using pandas.
 - PDF Report: The comprehensive analysis including plots and insights is compiled into output/heart_attack_report.pdf, which can be opened with any PDF reader.
 
 ### Example Plots and Images
@@ -160,4 +151,4 @@ This project highlights the importance of data-driven insights in understanding 
 
 ### CI/CD Pipeline
 
-[![Full Report of Heart Attack Risk Data]()]
+[![Full Report of Heart Attack Risk Data](pandas_recoding-ezgif.com-video-to-gif-converter.gif)]

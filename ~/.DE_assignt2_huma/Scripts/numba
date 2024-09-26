@@ -1,8 +1,0 @@
-#!C:\Users\ss1516\DE_assignt2_huma\~\.DE_assignt2_huma\Scripts\python.exe
-# -*- coding: UTF-8 -*-
-from __future__ import print_function, division, absolute_import
-
-from numba.misc.numba_entry import main
-
-if __name__ == "__main__":
-    main()
