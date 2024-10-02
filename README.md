@@ -1,7 +1,19 @@
-[![Python 3.11](https://github.com/nogibjj/DE_assignt2_huma/actions/workflows/main.yml/badge.svg)](https://github.com/nogibjj/DE_assignt2_huma/actions/workflows/main.yml)
+[![Install](https://github.com/nogibjj/individual_project_huma/actions/workflows/install.yml/badge.svg)](https://github.com/nogibjj/individual_project_huma/actions/workflows/install.yml)
+[![Format](https://github.com/nogibjj/individual_project_huma/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/individual_project_huma/actions/workflows/format.yml)
+[![Lint](https://github.com/nogibjj/individual_project_huma/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/individual_project_huma/actions/workflows/lint.yml)
+[![Test](https://github.com/nogibjj/individual_project_huma/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/individual_project_huma/actions/workflows/test.yml)
 
-# Pandas Descriptive Statistics Script
-This is the second Assignment for Data Engineering on Pandas descriptive statistics.
+# Individual Project 1
+This is the fourth Assignment for Data Engineering.
+
+## Youtube Video
+In this video, I provide a comprehensive walkthrough of my Heart Attack Risk Analysis project. I explain the entire process—from data processing and exploratory data analysis to generating visualizations and setting up the CI/CD pipeline using GitHub Actions.
+https://youtu.be/VGDl91hA8lU
+
+## CI/CD Pipeline
+
+[![CI-CD Pipeline](qHIg6g7 - Imgur.gif)]
+
 
 # Heart Attack Risk Analysis 
 ## Project Aim
@@ -149,6 +161,3 @@ These are some of the plots drawn as part of the analysis. The pdf report and th
 
 This project highlights the importance of data-driven insights in understanding and predicting health risks. 
 
-### CI/CD Pipeline
-
-[![Full Report of Heart Attack Risk Data](pandas_recoding-ezgif.com-video-to-gif-converter.gif)]
