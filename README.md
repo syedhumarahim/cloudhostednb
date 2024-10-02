@@ -14,7 +14,7 @@ In this video, I provide a comprehensive walkthrough of my Heart Attack Risk Ana
 # CI/CD Pipeline
 
 
-![CI-CD Pipeline]()
+![CI-CD Pipeline](ci-cd-proj1.gif)
 
 
 # Heart Attack Risk Analysis 
