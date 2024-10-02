@@ -12,7 +12,7 @@ https://youtu.be/VGDl91hA8lU
 
 ## CI/CD Pipeline
 
-![CI-CD Pipeline](qHIg6g7 - Imgur.gif)
+![CI-CD Pipeline](ci-cd-proj1.gif)
 
 # Heart Attack Risk Analysis 
 ## Project Aim
