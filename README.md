@@ -11,21 +11,52 @@ This is the fourth Assignment for Data Engineering.
 In this video, I provide a comprehensive walkthrough of my Heart Attack Risk Analysis project. I explain the entire process—from data processing and exploratory data analysis to generating visualizations and setting up the CI/CD pipeline using GitHub Actions.
 
 
-# CI/CD Pipeline
+# Project Structure
 
+My project is organized into several key components:
+
+- **Data Acquisition**: I used a comprehensive dataset titled **"heart_attack_prediction_dataset.csv"** which includes variables like Age, Sex, Cholesterol levels, Blood Pressure, Lifestyle habits, and more.
+
+- **Data Analysis**: Utilizing Python libraries such as **Pandas** for data manipulation and **Plotly Express** for visualization, I performed exploratory data analysis to uncover significant patterns.
+
+- **Visualization**: Generated a variety of plots to visualize heart attack risks by country, hemisphere, gender, age groups, and other factors.
+
+- **Reporting**: Created an interactive HTML report using **Sweetviz** and compiled a detailed PDF report containing all the insights and visualizations.
+
+- **Automation with CI/CD Pipeline**: Implemented a Continuous Integration and Continuous Deployment (CI/CD) pipeline using **GitHub Actions** to ensure code quality and automate testing.
+
+---
+
+# CI/CD Pipeline with GitHub Actions
 
 ![CI-CD Pipeline](ci-cd-proj1.gif)
 
+To maintain code quality and streamline development, I set up a CI/CD pipeline using GitHub Actions. Here's how it enhances the project:
+
+- **Automated Testing**:
+  - Every push triggers tests using **pytest**, ensuring new changes don't break existing functionality.
+
+- **Code Formatting and Linting**:
+  - **Python Black** formats the code consistently.
+  - **Ruff** lints the code to catch errors and enforce coding standards.
+
+- **Dependency Management**:
+  - Dependencies are installed via a pinned `requirements.txt` to ensure consistent environments across different setups.
+
+- **Continuous Integration Badges**:
+  - The README includes badges that display the status of the pipeline steps, providing immediate feedback on the codebase's health.
+
+This automated workflow not only saves time but also ensures that the project remains robust, maintainable, and scalable.
 
 # Heart Attack Risk Analysis 
 ## Project Aim
 The aim of this project is to analyze the risk of heart attacks across different demographics and various lifestyle and health factors using data visualization techniques and statistical analysis. This analysis seeks to uncover patterns and trends that can help in predicting heart attack risks.
 
-## Project Structure
+## Project File Structure
 The project directory is organized as follows:
 
 ```
-DE_ASSIGN2_HUMA/
+individual_project_huma/
 │
 ├── data/                        # Data files
 │   └── heart_attack_prediction_dataset.csv
@@ -59,8 +90,8 @@ DE_ASSIGN2_HUMA/
 Clone the repository:
 
 ```
-git clone https://github.com/yourusername/DE_ASSIGN2_HUMA.git
-cd DE_ASSIGN2_HUMA
+git clone https://github.com/yourusername/individual_project_huma.git
+cd individual_project_huma
 ```
 
 Install dependencies:
