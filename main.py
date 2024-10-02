@@ -1,8 +1,8 @@
 import pandas as pd
 import os
 import sweetviz as sv
-from EDA_first import create_summary_table, generate_and_save_plots
-from summary_pdf import create_pdf_report
+from lib.EDA_first import create_summary_table, generate_and_save_plots
+from lib.summary_pdf import create_pdf_report
 
 # Define file paths
 data_filepath = "data/heart_attack_prediction_dataset.csv"

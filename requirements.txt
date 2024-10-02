@@ -1,5 +1,5 @@
 pandas
-pylint
+ruff
 plotly
 reportlab 
 kaleido
@@ -9,3 +9,4 @@ pytest
 black
 pytest-cov
 sweetviz
+nbval
