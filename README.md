@@ -14,7 +14,6 @@ https://youtu.be/VGDl91hA8lU
 
 ![CI-CD Pipeline](qHIg6g7 - Imgur.gif)
 
-
 # Heart Attack Risk Analysis 
 ## Project Aim
 The aim of this project is to analyze the risk of heart attacks across different demographics and various lifestyle and health factors using data visualization techniques and statistical analysis. This analysis seeks to uncover patterns and trends that can help in predicting heart attack risks.
