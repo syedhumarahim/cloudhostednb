@@ -9,7 +9,7 @@ This is the fourth Assignment for Data Engineering.
 # Youtube Video
 
 In this video, I provide a comprehensive walkthrough of my Heart Attack Risk Analysis project. I explain the entire process—from data processing and exploratory data analysis to generating visualizations and setting up the CI/CD pipeline using GitHub Actions.
-
+[![Project description Video](fianl_gif_utube.gif)](https://www.youtube.com/watch?v=inL74s85z6U)
 
 # Project Structure
 
@@ -60,6 +60,9 @@ individual_project_huma/
 │
 ├── data/                        # Data files
 │   └── heart_attack_prediction_dataset.csv
+├── lib                       # contains helper functions for EDA and reporting
+│   ├── EDA_first.py        # Script for initial exploratory data analysis
+|   └── summary_pdf.py      # Script to generate PDF report
 │
 ├── output/                      # Output files and reports
 │   ├── plots/                   # Generated plots
@@ -78,9 +81,7 @@ individual_project_huma/
 │   ├── summary_table.csv        # CSV file for summary statistics
 |   └── heart_attack_report.pdf  # final pdf report containing all graphs and insights
 │
-├── EDA_first.py                 # Script for initial exploratory data analysis
 ├── main.py                      # Main script to run analyses
-├── summary_pdf.py               # Script to generate PDF report
 ├── requirements.txt             # Project dependencies
 └── README.md                    # Project documentation
 ```
