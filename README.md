@@ -10,7 +10,6 @@ This is the fourth Assignment for Data Engineering.
 
 In this video, I provide a comprehensive walkthrough of my Heart Attack Risk Analysis project. I explain the entire process—from data processing and exploratory data analysis to generating visualizations and setting up the CI/CD pipeline using GitHub Actions.
 
-[![CI-CD Pipeline](ci-cd-proj1.gif)](url)
 
 # CI/CD Pipeline
 
