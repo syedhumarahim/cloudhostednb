@@ -17,6 +17,9 @@ generate_and_push:
 
 	# Add, commit, and push the generated files to GitHub
 	@if [ -n "$$(git status --porcelain)" ]; then \
+		git config --global user.email "ss1516@duke.edu"; \ 
+		git config --global user.email "Syed Huma"; \
+		git pull;\ 
 		git add .; \
 		git commit -m "Add generated plot and report"; \
 		git push; \
