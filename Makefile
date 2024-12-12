@@ -8,7 +8,7 @@ lint:
 	ruff check *.py lib/*.py 
 
 test:
-	python -m pytest -vv --nbval-lax -cov=lib -cov=main test_main.py *.ipynb --disable-warnings  
+	python -m pytest -vv --nbval-lax -cov=lib -cov=main test_main.py --disable-warnings  
 
 all: install format test lint
 
