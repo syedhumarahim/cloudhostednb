@@ -1,20 +1,68 @@
-[![Python 3.11](https://github.com/nogibjj/DE_assignt2_huma/actions/workflows/main.yml/badge.svg)](https://github.com/nogibjj/DE_assignt2_huma/actions/workflows/main.yml)
+[![Install](https://github.com/nogibjj/individual_project_huma/actions/workflows/install.yml/badge.svg)](https://github.com/nogibjj/individual_project_huma/actions/workflows/install.yml)
+[![Format](https://github.com/nogibjj/individual_project_huma/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/individual_project_huma/actions/workflows/format.yml)
+[![Lint](https://github.com/nogibjj/individual_project_huma/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/individual_project_huma/actions/workflows/lint.yml)
+[![Test](https://github.com/nogibjj/individual_project_huma/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/individual_project_huma/actions/workflows/test.yml)
 
-# Pandas Descriptive Statistics Script
-This is the second Assignment for Data Engineering on Pandas descriptive statistics.
+# Individual Project 1
+This is the fourth Assignment for Data Engineering.
+
+# Youtube Video
+
+In this video, I provide a comprehensive walkthrough of my Heart Attack Risk Analysis project. I explain the entire process—from data processing and exploratory data analysis to generating visualizations and setting up the CI/CD pipeline using GitHub Actions.
+[![Project description Video](fianl_gif_utube.gif)](https://www.youtube.com/watch?v=inL74s85z6U)
+
+# Project Structure
+
+My project is organized into several key components:
+
+- **Data Acquisition**: I used a comprehensive dataset titled **"heart_attack_prediction_dataset.csv"** which includes variables like Age, Sex, Cholesterol levels, Blood Pressure, Lifestyle habits, and more.
+
+- **Data Analysis**: Utilizing Python libraries such as **Pandas** for data manipulation and **Plotly Express** for visualization, I performed exploratory data analysis to uncover significant patterns.
+
+- **Visualization**: Generated a variety of plots to visualize heart attack risks by country, hemisphere, gender, age groups, and other factors.
+
+- **Reporting**: Created an interactive HTML report using **Sweetviz** and compiled a detailed PDF report containing all the insights and visualizations.
+
+- **Automation with CI/CD Pipeline**: Implemented a Continuous Integration and Continuous Deployment (CI/CD) pipeline using **GitHub Actions** to ensure code quality and automate testing.
+
+---
+
+# CI/CD Pipeline with GitHub Actions
+
+![CI-CD Pipeline](ci-cd-proj1.gif)
+
+To maintain code quality and streamline development, I set up a CI/CD pipeline using GitHub Actions. Here's how it enhances the project:
+
+- **Automated Testing**:
+  - Every push triggers tests using **pytest**, ensuring new changes don't break existing functionality.
+
+- **Code Formatting and Linting**:
+  - **Python Black** formats the code consistently.
+  - **Ruff** lints the code to catch errors and enforce coding standards.
+
+- **Dependency Management**:
+  - Dependencies are installed via a pinned `requirements.txt` to ensure consistent environments across different setups.
+
+- **Continuous Integration Badges**:
+  - The README includes badges that display the status of the pipeline steps, providing immediate feedback on the codebase's health.
+
+This automated workflow not only saves time but also ensures that the project remains robust, maintainable, and scalable.
 
 # Heart Attack Risk Analysis 
 ## Project Aim
 The aim of this project is to analyze the risk of heart attacks across different demographics and various lifestyle and health factors using data visualization techniques and statistical analysis. This analysis seeks to uncover patterns and trends that can help in predicting heart attack risks.
 
-## Project Structure
+## Project File Structure
 The project directory is organized as follows:
 
 ```
-DE_ASSIGN2_HUMA/
+individual_project_huma/
 │
 ├── data/                        # Data files
 │   └── heart_attack_prediction_dataset.csv
+├── lib                       # contains helper functions for EDA and reporting
+│   ├── EDA_first.py        # Script for initial exploratory data analysis
+|   └── summary_pdf.py      # Script to generate PDF report
 │
 ├── output/                      # Output files and reports
 │   ├── plots/                   # Generated plots
@@ -33,9 +81,7 @@ DE_ASSIGN2_HUMA/
 │   ├── summary_table.csv        # CSV file for summary statistics
 |   └── heart_attack_report.pdf  # final pdf report containing all graphs and insights
 │
-├── EDA_first.py                 # Script for initial exploratory data analysis
 ├── main.py                      # Main script to run analyses
-├── summary_pdf.py               # Script to generate PDF report
 ├── requirements.txt             # Project dependencies
 └── README.md                    # Project documentation
 ```
@@ -45,8 +91,8 @@ DE_ASSIGN2_HUMA/
 Clone the repository:
 
 ```
-git clone https://github.com/yourusername/DE_ASSIGN2_HUMA.git
-cd DE_ASSIGN2_HUMA
+git clone https://github.com/yourusername/individual_project_huma.git
+cd individual_project_huma
 ```
 
 Install dependencies:
@@ -106,7 +152,7 @@ After thorough analysis, key insights include:
 **Report.html**: An interactive HTML report generated by Sweetviz, providing an extensive exploratory data analysis overview.
 
 You can view the .html file in your browser and explore more insights about each column of the data.
-[![Exploratory Data Analysis of Heart Attack Risk Data - Watch Video](https://cdn.loom.com/sessions/thumbnails/e6987d516de24be585584a4c0b8f91bd-a743dc9fcfb0ae4b-full-play.gif)](https://www.loom.com/share/e6987d516de24be585584a4c0b8f91bd)
+![Exploratory Data Analysis Reporto on Heart Attack Risk - Watch Video](chrome_6YZW0w0K1N-ezgif.com-crop.gif)
 
 **heart_attack_report.pdf**: The report provides detaied insights dervied after this analysis. ALl the plots and visualistions are provided in the report with explanaation. This is generated in the main.py file after all the plots are generated, all the insights are compiled into one .pdf report. 
 
@@ -149,6 +195,3 @@ These are some of the plots drawn as part of the analysis. The pdf report and th
 
 This project highlights the importance of data-driven insights in understanding and predicting health risks. 
 
-### CI/CD Pipeline
-
-[![Full Report of Heart Attack Risk Data](pandas_recoding-ezgif.com-video-to-gif-converter.gif)]
