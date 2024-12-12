@@ -1,11 +1,46 @@
-[![Install](https://github.com/nogibjj/individual_project_huma/actions/workflows/install.yml/badge.svg)](https://github.com/nogibjj/individual_project_huma/actions/workflows/install.yml)
-[![Format](https://github.com/nogibjj/individual_project_huma/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/individual_project_huma/actions/workflows/format.yml)
-[![Lint](https://github.com/nogibjj/individual_project_huma/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/individual_project_huma/actions/workflows/lint.yml)
-[![Test](https://github.com/nogibjj/individual_project_huma/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/individual_project_huma/actions/workflows/test.yml)
 
-# Individual Project 1
-This is the fourth Assignment for Data Engineering.
+[![Install](https://github.com/syedhumarahim/cloudhostednb/actions/workflows/install.yml/badge.svg)](https://github.com/syedhumarahim/cloudhostednb/actions/workflows/install.yml)
+[![Format](https://github.com/syedhumarahim/cloudhostednb/actions/workflows/format.yml/badge.svg)](https://github.com/syedhumarahim/cloudhostednb/actions/workflows/format.yml)
+[![Lint](https://github.com/syedhumarahim/cloudhostednb/actions/workflows/lint.yml/badge.svg)](https://github.com/syedhumarahim/cloudhostednb/actions/workflows/lint.yml)
+[![Test](https://github.com/syedhumarahim/cloudhostednb/actions/workflows/test.yml/badge.svg)](https://github.com/syedhumarahim/cloudhostednb/actions/workflows/test.yml)
 
+
+# Cloud-Hosted Notebook Data Manipulation
+
+This project involves setting up a cloud-hosted Jupyter Notebook, performing data manipulation tasks on a sample dataset, and implementing a CI/CD pipeline for seamless integration. The project is designed to showcase proficiency in setting up and working within a cloud-based data science environment.
+
+## Project Overview
+
+- **Cloud Environment**: Jupyter Notebook hosted on Google Colab.
+- **Dataset**: dataset provided for manipulation tasks.
+- **Tasks**:
+  1. Data loading and exploration.
+  2. Data cleaning and preprocessing.
+  3. Data transformation and visualization.
+  4. Reporting
+- **CI/CD Integration**: Automates testing, linting, and deployment for efficient collaboration and development.
+
+## Requirements
+
+### 1. Setup and Configuration
+- **Cloud Notebook**: Google Colab was used to host and execute the notebook. 
+- **Libraries**: Key Python libraries such as `pandas`, `numpy`, and `matplotlib` were used for data manipulation and visualization.
+- **Notebook Access**: [View the notebook here](https://colab.research.google.com/drive/1dNZvcTekPS-SRboF795v27wSC8WCnWMP?usp=sharing).
+
+## Setup Instructions
+
+### Prerequisites
+- A Google account for accessing Google Colab.
+- Python installed locally (optional for testing).
+
+### Steps
+1. Open the [Google Colab Notebook](https://colab.research.google.com/drive/1dNZvcTekPS-SRboF795v27wSC8WCnWMP?usp=sharing).
+2. Follow the instructions in the notebook to load and manipulate the data.
+3. Install required dependencies if running locally:
+   ```
+   pip install -r requirements.txt
+   ```
+   
 # Youtube Video
 
 In this video, I provide a comprehensive walkthrough of my Heart Attack Risk Analysis project. I explain the entire process—from data processing and exploratory data analysis to generating visualizations and setting up the CI/CD pipeline using GitHub Actions.
