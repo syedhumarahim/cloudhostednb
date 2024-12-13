@@ -7,6 +7,7 @@
 
 # Cloud-Hosted Notebook Data Manipulation
 
+
 This project involves setting up a cloud-hosted Jupyter Notebook, performing data manipulation tasks on a sample dataset, and implementing a CI/CD pipeline for seamless integration. The project is designed to showcase proficiency in setting up and working within a cloud-based data science environment.
 
 ## Project Overview
